@@ -14,13 +14,13 @@ IF OBJECT_ID('bronze.online_retail', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.online_retail (
-	InvoiceNo	INT,
-	StockCode	INT,
-	Description	NVARCHAR(255),
-	Quantity	INT,
-	InvoiceDate	DATETIME,
-	UnitPrice	INT,
-	CustomerID	INT,
-	Country		NVARCHAR(50)
+	InvoiceNo	nvarchar(50) null,
+	StockCode	nvarchar(50) null,
+	Description	nvarchar(50) null,
+	Quantity	nvarchar(50) null,
+	InvoiceDate	nvarchar(50) null,
+	UnitPrice	nvarchar(50) null,
+	CustomerID	nvarchar(50) null,
+	Country		nvarchar(50) null
 );
 GO
