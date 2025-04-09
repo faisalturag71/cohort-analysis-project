@@ -30,7 +30,7 @@ BEGIN
 		TRUNCATE TABLE bronze.online_retail;
 		PRINT '>> Inserting Data Into: bronze.online_retail';
 		BULK INSERT bronze.online_retail
-		FROM 'C:\Users\Faisal\Downloads\online+retail\Online Retail.csv'
+		FROM 'C:\Users\Faisal\Downloads\Online_Retail.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -52,6 +52,9 @@ BEGIN
 		PRINT 'Error Message ' + ERROR_MESSAGE();
 		PRINT 'Error Message ' + CAST (ERROR_NUMBER() AS NVARCHAR);
 		PRINT 'Error Message ' + CAST (ERROR_STATE() AS NVARCHAR);
+		PRINT 'Line: ' + CAST(ERROR_LINE() AS NVARCHAR);
+		PRINT 'Procedure: ' + ISNULL(ERROR_PROCEDURE(), 'N/A');
+
 		PRINT '=========================================='
 	END CATCH
 END
