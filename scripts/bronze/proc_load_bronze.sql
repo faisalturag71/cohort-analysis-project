@@ -27,7 +27,7 @@ BEGIN
 
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.online_retail';
-		TRUNCATE TABLE bronze.crm_cust_info;
+		TRUNCATE TABLE bronze.online_retail;
 		PRINT '>> Inserting Data Into: bronze.online_retail';
 		BULK INSERT bronze.online_retail
 		FROM 'C:\Users\Faisal\Downloads\online+retail\Online Retail.csv'
