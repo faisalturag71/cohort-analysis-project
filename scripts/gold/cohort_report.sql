@@ -1,3 +1,23 @@
+/*
+===============================================================================
+Cohort Report
+===============================================================================
+Purpose:
+    - This report consolidates key cohort metrics and behaviors
+
+Highlights:
+    1. Remove Dupicates and irrelevant rows.
+	2. Derrive primary fields(cohort month and revenue) for cohort analysis.
+    3. Aggregated monthly active users and revenue with cumulative revenue.
+    4. Initial customer count and revenue at Month 0
+    5. Final Tableau-ready metrics: CustomerRetentionRate, RevenueRetentionRate, CustomerLifetimeRevenue
+===============================================================================
+*/
+
+-- =============================================================================
+-- Create Report:
+-- =============================================================================
+
 --1. gold.vw_cohort_sales
 
 CREATE OR ALTER VIEW gold.vw_cohort_sales AS
