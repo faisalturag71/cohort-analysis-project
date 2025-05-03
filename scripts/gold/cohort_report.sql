@@ -6,6 +6,7 @@ Purpose:
     - This report consolidates key cohort metrics and behaviors
 
 Highlights:
+    0. Create indexes for performance optimizaiton. 
     1. Remove Dupicates and irrelevant rows. 
     2. Derrive primary fields(cohort month and revenue) for cohort analysis. 
     3. Aggregate monthly active users and revenue with cumulative revenue.
@@ -13,6 +14,17 @@ Highlights:
     5. Final Tableau-ready metrics: CustomerRetentionRate, RevenueRetentionRate, CustomerLifetimeRevenue
 ===============================================================================
 */
+
+-- =============================================================================
+-- Create Index:
+-- =============================================================================
+
+
+-- Primary filtering + partitioning columns:
+CREATE NONCLUSTERED INDEX idx_online_retail_main
+ON bronze.online_retail (CustomerID, InvoiceDate)
+INCLUDE (Quantity, UnitPrice, InvoiceNo, StockCode, Description, Country);
+GO
 
 -- =============================================================================
 -- Create Report:
